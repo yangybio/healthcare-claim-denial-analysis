@@ -324,7 +324,7 @@ The Department Analysis dashboard allows users to select a clinical department a
 
 This drill-down view helps distinguish organization-wide patterns from department-specific operational risks.
 
-![Department Analysis](images/Primary care Analysis.png)
+![Department Analysis](images/Primary_care_Analysis.png)
 
 ---
 
