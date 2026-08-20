@@ -99,194 +99,114 @@ Tableau Dashboard
 
 # Key Findings
 
-## 1. Preventable front-end issues account for the majority of denial exposure
+## 1. Most denials were linked to preventable front-end issues
 
-Of 2,500 encounters, **298 claims were denied**, resulting in an overall denial rate of approximately **11.9%** and **$112,807 in denied charges**.
+Out of 2,500 encounters, 298 claims were denied, giving an overall denial rate of **11.9%** and a total denied amount of **$112,807**.
 
-Approximately **83.9% of denied claims** were associated with preventable front-end issues.
+What stood out most was that **83.9% of denied claims were associated with preventable front-end issues**.
 
-More importantly, denial exposure was highly concentrated. The two leading front-end issues were:
+The two largest issues were:
 
 - **Incorrect Primary Insurance:** 87 denials
 - **Inactive Coverage:** 80 denials
 
-Together, these two issues accounted for:
+Together, they accounted for **56.0% of all denied claims** and about **55.2% of total denied dollars**.
 
-- **167 of 298 denied claims (56.0%)**
-- approximately **$62,233 in denied charges (55.2% of total denied dollars)**
-
-This concentration indicates that a relatively small number of registration and insurance-verification workflows represent the largest measurable opportunity for denial reduction.
+This was the clearest finding in the project. More than half of the denial problem was concentrated in just two insurance-related front-end issues.
 
 ---
 
-## 2. Department risk is driven by both denial rate and encounter volume
-
-Department performance varied substantially.
-
-| Department | Denial Rate |
-|---|---:|
-| Cardiology | **14.7%** |
-| Primary Care | **12.7%** |
-| Orthopedics | **12.3%** |
-| Imaging | **11.0%** |
-| OB/GYN | **9.0%** |
+## 2. The department with the highest denial rate was not the department with the most denials
 
 Cardiology had the highest denial rate at **14.7%**, while OB/GYN had the lowest at **9.0%**.
 
-However, denial rate alone does not identify the largest operational opportunity.
+However, Primary Care had the largest number of denied claims, with **108 denials**.
 
-Primary Care generated **108 denied claims**, the highest absolute denial volume in the dataset, because it also handled the largest encounter volume.
+This matters because looking only at denial rate can be misleading.
 
-Within Primary Care:
-
-- Incorrect Primary Insurance generated 29 denials.
-- Inactive Coverage generated 28 denials.
-- Together they accounted for **57 of 108 Primary Care denials (52.8%)**.
-- These two issues represented approximately **$22,363 in denied charges**.
-
-This distinction is operationally important: the department with the highest denial rate is not necessarily the department with the greatest opportunity to reduce the total number of denied claims.
+Cardiology appears to be the highest-risk department by rate, while Primary Care may offer a larger opportunity to reduce the total number of denials because of its higher encounter volume.
 
 ---
 
-## 3. Department-level analysis reveals distinct operational failure patterns
+## 3. The main denial drivers were different across departments
 
-Front-end denial drivers were not distributed uniformly across departments.
-
-In **Cardiology**, Incorrect Primary Insurance and Inactive Coverage generated 17 denials each. Together, they accounted for **34 of 60 Cardiology denials (56.7%)**.
-
-In **Orthopedics**, Inactive Coverage generated 16 denials and Incorrect Primary Insurance generated 13. Together, these two issues accounted for **29 of 44 denials (65.9%)**.
-
-**Imaging** showed a particularly concentrated pattern. Incorrect Primary Insurance alone generated **16 of 38 Imaging denials (42.1%)** and approximately **$8,053 in denied charges**, making it the department's dominant front-end financial issue.
-
-These differences suggest that a single organization-wide denial strategy may overlook department-specific failure patterns. Targeted interventions may therefore be more actionable than uniform training across all front-end issues.
-
----
-
-## 4. OB/GYN provides a useful internal benchmark for further workflow investigation
-
-OB/GYN had the lowest overall denial rate at **9.0%**.
-
-It also showed a different denial mix from several higher-denial departments. Approximately **27.1% of OB/GYN denials** were classified as having no identifiable front-end issue / other non-preventable denial.
-
-Because this is a simulated observational dataset, the analysis cannot establish that a particular OB/GYN workflow caused its lower denial rate.
-
-However, the performance difference makes OB/GYN a useful internal benchmark for further comparison of:
-
-- pre-registration practices,
-- insurance verification timing,
-- primary/secondary insurance review,
-- and exception-handling workflows.
-
-Understanding which operational practices differ between lower- and higher-denial departments could help identify processes worth standardizing.
-
----
-
-## 5. Payer risk varies by department rather than following one organization-wide pattern
-
-At the overall level, Medicaid had the highest payer denial rate at approximately **13.2%**.
-
-However, department-level analysis revealed that payer risk was not consistent across the organization.
+The department drill-down showed that the same front-end issues did not affect every department in exactly the same way.
 
 For example:
 
-- **Cardiology:** Medicaid denial rate reached **20.2%**
-- **Orthopedics:** Commercial insurance had the highest denial rate at **14.8%**
-- **Imaging:** Other Government plans had the highest observed denial rate at **12.5%**
+- In **Cardiology**, Incorrect Primary Insurance and Inactive Coverage together accounted for **34 of 60 denials**.
+- In **Orthopedics**, those same two issues accounted for **29 of 44 denials**.
+- In **Imaging**, Incorrect Primary Insurance alone accounted for **16 of 38 denials** and about **$8,053 in denied amount**.
 
-This suggests that payer-related denial risk should not be interpreted solely at the organization-wide level.
+This means the overall dashboard is useful for identifying the biggest problems, but department-level analysis is still needed before deciding what kind of process improvement would be most useful.
 
-Instead, payer performance should be investigated within individual department workflows, where differences in registration processes, eligibility verification, and payer requirements may create distinct operational risks.
+---
+
+## 4. Denial count and financial impact do not always tell the same story
+
+The most common denial issues generally also created the largest total denied amounts.
+
+However, some lower-volume issues still had meaningful financial impact.
+
+For example, Subscriber Demographic Mismatch occurred less often than the major denial categories, but its average denied amount was approximately **$441 per claim**.
+
+Because of this, I would not prioritize denial problems based only on how often they occur. Denial count and denied dollars should be reviewed together.
 
 ---
 
 # Business Recommendations
 
-## 1. Prioritize primary-insurance and active-coverage verification
+## 1. Focus first on primary insurance and active coverage
 
-Incorrect Primary Insurance and Inactive Coverage together account for **56.0% of all denied claims** and approximately **55.2% of total denied dollars**.
+Incorrect Primary Insurance and Inactive Coverage were responsible for more than half of both denied claims and denied dollars.
 
-Rather than distributing improvement efforts evenly across all denial categories, the first operational intervention should focus on these two workflows.
+These two issues would be my first priority for process improvement.
 
-Potential actions include:
+Possible actions include:
 
-- Confirm primary and secondary insurance order during pre-registration.
-- Verify active coverage before the date of service.
-- Flag inactive or unresolved coverage for follow-up before the encounter.
-- Create an exception queue for eligibility issues that cannot be resolved automatically.
-- Escalate unresolved insurance-order or coverage issues before claim submission.
+- confirming primary and secondary insurance order during registration,
+- verifying active coverage before the visit,
+- and creating a clear follow-up process for coverage that cannot be verified.
 
-Because more than half of denial volume and denied dollars are concentrated in these two categories, improvements here would address the largest measurable source of preventable denial exposure.
+The goal would be to catch these problems before the claim reaches billing.
 
 ---
 
-## 2. Use different strategies for high-rate and high-volume departments
+## 2. Use both denial rate and denial volume when deciding where to intervene
 
-**Cardiology** should be investigated as a high-rate department because its denial rate is the highest at **14.7%**.
+Cardiology had the highest denial rate, but Primary Care had the largest number of denied claims.
 
-More than half of Cardiology denials (**56.7%**) are concentrated in Incorrect Primary Insurance and Inactive Coverage, providing a specific starting point for workflow review.
+For that reason, I would not rank departments using denial rate alone.
 
-**Primary Care**, however, represents a high-volume opportunity. Although its denial rate is lower at **12.7%**, it generates **108 denied claims**, the largest absolute denial volume in the dataset.
+A department-level review should consider:
 
-Therefore, operational prioritization should not rely on denial rate alone.
+- denial rate,
+- number of denied claims,
+- and denied amount.
 
-Department monitoring should evaluate both:
-
-> **Denial Rate × Denial Volume × Financial Exposure**
-
-This approach better identifies where process improvement could produce the greatest operational impact.
+This gives a more complete picture of where improvement could have the largest effect.
 
 ---
 
-## 3. Target Imaging specifically for primary-insurance selection errors
+## 3. Use department-specific follow-up instead of one general training approach
 
-Incorrect Primary Insurance accounts for **42.1% of Imaging denials** and approximately **$8,053 in denied charges**.
+The department analysis showed different denial patterns across departments.
 
-This concentration suggests that broad front-end training may be less useful than a targeted review of how primary insurance is identified during Imaging scheduling and registration.
+For example, Imaging had a particularly strong concentration of Incorrect Primary Insurance denials.
 
-A focused workflow review could examine:
+Rather than giving the same training to every department, I would use the dashboard to identify the dominant issue in each department and then review that specific part of the registration workflow.
 
-- whether insurance order is confirmed when imaging is scheduled,
-- whether existing coverage records are being reused without revalidation,
-- and how staff handle multiple active insurance plans.
-
-The objective would be to address the department's dominant denial driver rather than applying the same intervention to every front-end issue.
+For Imaging, that would mean looking closely at how primary insurance is selected and confirmed during scheduling or registration.
 
 ---
 
-## 4. Investigate the Cardiology–Medicaid segment as a targeted high-risk population
+## 4. Track financial impact together with denial frequency
 
-Cardiology has the highest overall department denial rate, while Medicaid claims within Cardiology show a **20.2% denial rate**, substantially above Cardiology's overall **14.7%** rate.
+High-frequency problems deserve attention, but lower-frequency problems should not automatically be ignored.
 
-A focused review should examine whether the elevated denial rate is associated with:
+I would include both claim count and denied dollars in ongoing denial monitoring so that a smaller category with relatively high financial impact is still visible.
 
-- eligibility verification,
-- coverage changes,
-- Coordination of Benefits,
-- insurance sequencing,
-- or payer-specific registration requirements.
-
-The available dataset identifies the segment as high risk but does not establish which workflow causes the difference; additional operational review would therefore be required before implementing a payer-specific intervention.
-
----
-
-## 5. Build denial monitoring around both frequency and financial exposure
-
-Operational dashboards should monitor multiple denial measures rather than ranking issues solely by claim count.
-
-Recommended monitoring metrics include:
-
-- Overall denial rate
-- Denial count
-- Preventable denial percentage
-- Total denied amount
-- Average denied amount per claim
-- Denial rate by department
-- Denial rate by payer group
-- Front-end issue distribution
-
-For example, Subscriber Demographic Mismatch occurs relatively infrequently but has the highest average denied amount at approximately **$441 per claim**.
-
-Combining frequency and financial severity helps prevent lower-volume but financially meaningful problems from being overlooked.
+This would make the dashboard more useful for deciding which problems are worth investigating first.
 
 ---
 
@@ -315,8 +235,8 @@ The Overview dashboard summarizes:
 The Department Analysis dashboard allows users to select a clinical department and investigate:
 
 - Department denial rate
-- Total denied claims
-- Total denied amount
+- Department denied claims
+- Department denied amount
 - Denial rate by front-end issue
 - Denied claims by denial reason
 - Financial impact by front-end issue
