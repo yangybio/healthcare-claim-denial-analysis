@@ -4,11 +4,11 @@
 
 This is an end-to-end healthcare business analytics project that investigates outpatient claim denials and identifies operational opportunities to reduce preventable revenue loss.
 
-The project combines Python-based data auditing, data cleaning, exploratory data analysis (EDA), business analytics, and Tableau visualization to transform simulated healthcare operational data into actionable business insights.
+I designed this project based on issues I see in front-end healthcare operations, especially insurance eligibility and registration problems that can affect downstream billing. I used simulated healthcare data to explore and quantify how these issues may contribute to claim denials and financial impact.
 
-The analysis focuses specifically on insurance eligibility and front-end registration issues, with additional drill-down analysis by department, payer group, denial reason, and financial impact.
+The project combines Python-based data auditing, data cleaning, exploratory data analysis (EDA), business analysis, and Tableau visualization. The analysis includes drill-downs by department, payer group, denial reason, and financial impact.
 
-The final deliverable includes an interactive Tableau dashboard designed to support operational monitoring and denial-reduction decision-making.
+The final deliverable is an interactive Tableau dashboard designed to support operational monitoring and help identify areas where front-end processes may be improved to reduce preventable denials.
 
 ---
 
